@@ -5,6 +5,17 @@ A simple TCP Socket bootloader for the ESP32 intended for use on WPA2-Enterprise
 
 To avoid the waste of the usual factory program and two identical OTA partitions, this small bootloader is intended to flash a single large OTA partition containing the primary application.  On the ESP-WROOM-32, this results in a comfortable 3MB for the main application.  (See the [partition table](partitions.csv)).
 
+## Running the Image Server
+
+Included is an example [Node.js tcp server](test/tcp-server.js) handing out a program to all who connect.  The flashable image is delivered with a simple fixed header format: 
+
+
+| Description  | Length |
+| ------------- | ------------- |
+| Payload size | 4 |
+| Payload SHA1Sum | 20 |
+| Payload | N |
+
 ## Returning to bootloader
 To return to this bootloader, the ESP32 needs to be told the OTA delivered application is not bootable.  A simple way to do this is to erase the OTAData partition (a small metadata block) and reboot, letting the ESP32 fall-back onto our loader:
 
