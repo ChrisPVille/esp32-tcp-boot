@@ -3,3 +3,4 @@ sdkconfig*
 .cproject
 .project
 .settings/
+test/*.bin
