@@ -252,6 +252,8 @@ static void wpa2_enterprise_example_task(void *pvParameters)
         ESP_LOGD(TAG,"Done");
         ESP_LOGI(TAG,"Received %d bytes", total);
 
+        //TODO We need to handle receiving less than the expected update size
+
         mbedtls_sha1_finish(&updateSha1,calculatedSHA1);
         mbedtls_sha1_free(&updateSha1);
 
