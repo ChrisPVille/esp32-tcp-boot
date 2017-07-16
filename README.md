@@ -1,6 +1,15 @@
 # ESP32 TCP Bootloader
 A simple TCP Socket bootloader for the ESP32 intended for use on WPA2-Enterprise networks.
 
+```
+I (804) boot: Loading app partition at offset 00010000 
+I (4739) bootflash: Fetching update... 
+I (5389) bootflash: Booting update... 
+
+I (809) boot: Loading app partition at offset 00100000
+Hello world!
+```
+
 ## Concept
 
 To avoid the waste of the usual factory program and two identical OTA partitions, this small bootloader is intended to flash a single large OTA partition containing the primary application.  On the ESP-WROOM-32, this results in a comfortable 3MB for the main application.  (See the [partition table](partitions.csv)).
