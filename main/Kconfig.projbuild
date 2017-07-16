@@ -1,0 +1,27 @@
+menu "Project Configuration"
+
+config WIFI_SSID
+    string "WiFi SSID"
+    default "NetworkSSID"
+    help
+        SSID (network name) for the example to connect to.
+
+config EAP_PASSWORD
+    string "EAP PASSWORD"
+    default "test1234"
+    help
+        Password for EAP method (PEAP and TTLS).
+
+config UPDATE_SERVER
+    string "Update Server"
+    default "updateserver"
+    help
+        The name/address of the TCP server hosting the updates (see included node server)
+
+config UPDATE_PORT
+    string "Port of update service"
+    default "8123"
+    help
+        The port number for the TCP update service
+
+endmenu
