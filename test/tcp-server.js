@@ -19,8 +19,8 @@ function handleConnection(conn) {
 
   function onConnData(d) {
     console.log('connection data from %s: %s', remoteAddress, d);
-    const fileStats = fs.statSync('30aea4041d8c');
-    fs.readFile('30aea4041d8c' , (err, data) =>{
+    const fileStats = fs.statSync('app.bin');
+    fs.readFile('app.bin' , (err, data) =>{
      if(!err){
       var sizeBuf = new Buffer(4);
       sizeBuf.writeUInt32LE(fileStats.size)
